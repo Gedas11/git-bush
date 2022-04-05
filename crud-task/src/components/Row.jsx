@@ -1,10 +1,10 @@
-const Row = () => {
+const Row = ({ name, age, secretIdentity, power }) => {
   return (
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{name}</td>
+      <td>{age}</td>
+      <td>{secretIdentity}</td>
+      <td>{power}</td>
       <td>
         <button className="btn btn-light">Edit</button>
       </td>

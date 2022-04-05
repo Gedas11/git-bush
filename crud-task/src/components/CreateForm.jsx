@@ -1,7 +1,24 @@
-const CreateForm = () => {
+import { useState } from "react";
+const CreateForm = (props) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    secretIdentity: "",
+    power: "",
+  });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    props.save(formData);
+  }
   return (
     <div className="modal-body m-auto col-6">
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="form-group">
           <label htmlFor="name" className="col-form-label">
             Name
@@ -11,6 +28,8 @@ const CreateForm = () => {
             type="text"
             id="name"
             placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
@@ -22,6 +41,8 @@ const CreateForm = () => {
             type="number"
             id="age"
             placeholder="Age"
+            value={formData.age}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
@@ -33,6 +54,8 @@ const CreateForm = () => {
             type="text"
             id="secretID"
             placeholder="Secret Identity"
+            value={formData.secretId}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
@@ -44,6 +67,8 @@ const CreateForm = () => {
             type="text"
             id="power"
             placeholder="Power"
+            value={formData.power}
+            onChange={handleChange}
           />
         </div>
         <button className="btn btn-dark" type="submit">

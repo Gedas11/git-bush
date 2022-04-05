@@ -1,7 +1,7 @@
-const Table = ({ children }) => {
+const Table = ( props ) => {
   return (
     <>
-      <h2 className="mb-3"></h2>
+      <h2 className="mb-3">{props.data.squadName} from {props.data.homeTown} based in {props.data.secretBase}</h2>
       <div className="container">
         <table className="table table-dark text-left">
           <thead>
@@ -12,7 +12,7 @@ const Table = ({ children }) => {
               <th>Power</th>
             </tr>
           </thead>
-          <tbody>{children}</tbody>
+          <tbody>{props.children}</tbody>
         </table>
       </div>
     </>
