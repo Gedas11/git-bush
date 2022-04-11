@@ -18,6 +18,17 @@ function App() {
     copyData.members.splice(form)
     setcrudData(copyData)
   }
+  const handleEdit = (name, age, secretIdentity, power, id) => {
+    setShowModal(true);
+    setModal({
+      name: name,
+      age: age,
+      secretIdentity: secretIdentity,
+      power: power,
+      id: id,
+    });
+  };
+
   const modal = ()=>{
     setShowModal(true)
   }
@@ -30,7 +41,7 @@ function App() {
         <RowList data={crudData} delete={onDelete}/>
       </Table>
       <CreateForm save={onSave}/>
-      <Modal showModal={showModal}/>
+      <Modal showModal={showModal} showModal={hideModal} showModal={handleEdit}/>
     </div>
   );
 }

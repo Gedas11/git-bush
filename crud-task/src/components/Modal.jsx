@@ -11,7 +11,7 @@ const Modal = ({showModal}) => {
       aria-hidden="true"
       style={{
         display: showModal ? "block" : "none",
-        opacity: showModal ? "1" 
+        
       }}
     >
       <div className="modal-dialog modal-dialog-centered" role="document">
