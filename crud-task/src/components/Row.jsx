@@ -1,4 +1,4 @@
-const Row = ({ name, age, secretIdentity, power }) => {
+const Row = ({ name, age, secretIdentity, power, onDelete }) => {
   return (
     <tr>
       <td>{name}</td>
@@ -9,7 +9,7 @@ const Row = ({ name, age, secretIdentity, power }) => {
         <button className="btn btn-light">Edit</button>
       </td>
       <td>
-        <button className="btn btn-light">Delete</button>
+        <button className="btn btn-light" onClick={onDelete}>Delete</button>
       </td>
     </tr>
   );

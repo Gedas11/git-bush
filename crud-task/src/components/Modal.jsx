@@ -1,4 +1,6 @@
-const Modal = () => {
+
+const Modal = ({showModal}) => {
+  
   return (
     <div
       className="modal fade"
@@ -7,6 +9,10 @@ const Modal = () => {
       role="dialog"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
+      style={{
+        display: showModal ? "block" : "none",
+        opacity: showModal ? "1" 
+      }}
     >
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content">

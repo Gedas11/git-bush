@@ -16,6 +16,11 @@ const CreateForm = (props) => {
     e.preventDefault();
     props.save(formData);
   }
+  // const clearFormData = (formData) => {
+  //   e.preventDefault();
+  //   handleChange(formData);
+
+  // }
   return (
     <div className="modal-body m-auto col-6">
       <form onSubmit={submitHandler}>
